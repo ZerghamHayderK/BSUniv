@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bayut Studios | Universe</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="universe-background">
+        <div class="star-layer"></div>
+        <div class="glow-overlay"></div>
+    </div>
+
+    <nav class="glass-nav">
+        <div class="nav-content">
+            <div class="logo">BAYUT <span>STUDIOS</span></div>
+            <ul class="nav-links">
+                <li><a href="#" onclick="showPage('home')" class="nav-item active">Home</a></li>
+                <li><a href="#" onclick="showPage('team')" class="nav-item">Team</a></li>
+                <li><a href="#" onclick="showPage('projects')" class="nav-item">Projects</a></li>
+                <li><a href="#" onclick="showPage('performance')" class="nav-item">Performance</a></li>
+                <li><a href="calculator.html" class="calc-pill">Price Calculator</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="content-wrapper">
+        
+        <section id="home" class="page active">
+            <div class="hero-card">
+                <h1 class="glitch-text">ABOUT US</h1>
+                <p class="accent-p">At Bayut Studios, we thrive in a technology-driven environment to deliver world-class visualizations and marketing campaigns. United by a single vision: leveraging innovation to build lasting connections.</p>
+                <div class="home-grid">
+                    <div class="mini-glass-card"><h3>360°</h3><p>VR Experiences</p></div>
+                    <div class="mini-glass-card"><h3>4K</h3><p>Visualizations</p></div>
+                    <div class="mini-glass-card"><h3>PRO</h3><p>Field Production</p></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="team" class="page">
+            <h1 class="section-title">The Studios Team</h1>
+            <div class="team-grid">
+                <div class="profile-card leader">
+                    <div class="pfp"></div>
+                    <h2>Haroon Hayyat Noon</h2>
+                    <p class="role">Director ZD & Bayut Studios</p>
+                    <p class="desc">A visionary leader redefining real estate storytelling.</p>
+                </div>
+                <div class="profile-card"><h3>Ansub Nadeem Sheikh</h3><p>Sr. Manager Animations</p></div>
+                <div class="profile-card"><h3>Aqdas Waseem</h3><p>Sr. Manager Creative</p></div>
+                <div class="profile-card"><h3>Fareed Ud din Masood</h3><p>Sr. Manager Engineering</p></div>
+                <div class="profile-card"><h3>Ammad Ul Mateen</h3><p>Sr. Manager Field Productions</p></div>
+            </div>
+        </section>
+
+        <section id="projects" class="page">
+            <h1 class="section-title">Our Projects</h1>
+            <div class="project-grid">
+                <div class="project-card"><h3>Zameen Vault</h3></div>
+                <div class="project-card"><h3>Zameen ARX</h3></div>
+                <div class="project-card"><h3>Zameen NEO</h3></div>
+                <div class="project-card"><h3>Aknan 23</h3></div>
+                <div class="project-card"><h3>Zameen Jade</h3></div>
+                <div class="project-card"><h3>Zameen Quadrangle</h3></div>
+            </div>
+        </section>
+
+        <section id="performance" class="page">
+            <h1 class="section-title">Performance Reports</h1>
+            <div class="report-container">
+                <div class="report-box">
+                    <h3>Project Insights Dashboard</h3>
+                    <a href="#" class="btn-action">Open PowerBI</a>
+                </div>
+                <div class="report-box">
+                    <h3>Pipeline Tracker</h3>
+                    <a href="#" class="btn-action">Open Tracker</a>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <script>
+        function showPage(pageId) {
+            // Hide all pages
+            document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+            // Show selected page
+            document.getElementById(pageId).classList.add('active');
+            // Update Nav links
+            document.querySelectorAll('.nav-item').forEach(item => item.classList.remove('active'));
+            event.target.classList.add('active');
+        }
+    </script>
+</body>
+</html>
