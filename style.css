@@ -1,0 +1,162 @@
+:root {
+    --primary: #1ed760; /* Sleek Bayut Green */
+    --bg-dark: #050505;
+    --glass: rgba(255, 255, 255, 0.03);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --text-main: #ffffff;
+    --text-dim: #b3b3b3;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    background: var(--bg-dark);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    color: var(--text-main);
+    overflow-x: hidden;
+}
+
+/* ══ STARRY BACKGROUND ══ */
+.star-container {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    z-index: -1;
+    background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);
+    overflow: hidden;
+}
+
+/* Minimalist star animation logic */
+#stars, #stars2, #stars3 {
+    position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+    background: transparent url('https://www.transparenttextures.com/patterns/stardust.png');
+    opacity: 0.3;
+}
+
+#stars { animation: moveStars 100s linear infinite; }
+@keyframes moveStars { from { background-position: 0 0; } to { background-position: 0 -10000px; } }
+
+/* ══ GLASS NAVIGATION ══ */
+.glass-nav {
+    position: fixed;
+    top: 0; width: 100%; height: 80px;
+    background: rgba(0,0,0,0.8);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--glass-border);
+    z-index: 1000;
+}
+
+.nav-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    padding: 0 20px;
+}
+
+.logo { font-weight: 800; font-size: 1.5rem; letter-spacing: 2px; }
+.logo span { color: var(--primary); }
+
+.nav-links { display: flex; list-style: none; gap: 30px; align-items: center; }
+.nav-links a { text-decoration: none; color: var(--text-dim); font-size: 0.9rem; transition: 0.3s; }
+.nav-links a:hover, .nav-links a.active { color: var(--primary); }
+
+.btn-calc {
+    background: var(--primary);
+    color: #000 !important;
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-weight: 700;
+}
+
+/* ══ LAYOUT ══ */
+.content-wrapper { padding-top: 120px; max-width: 1200px; margin: 0 auto; }
+
+.hero-glass {
+    background: var(--glass);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(15px);
+    padding: 60px;
+    border-radius: 40px;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.glow-text {
+    font-size: 4rem;
+    font-weight: 900;
+    margin-bottom: 20px;
+    background: linear-gradient(to bottom, #fff, #666);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 10px 30px rgba(30, 215, 96, 0.2);
+}
+
+.hero-description {
+    font-size: 1.2rem;
+    color: var(--text-dim);
+    line-height: 1.8;
+    max-width: 800px;
+    margin: 0 auto 40px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 40px;
+}
+
+.glass-card {
+    background: var(--glass);
+    border: 1px solid var(--glass-border);
+    padding: 40px;
+    border-radius: 30px;
+    transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.glass-card:hover {
+    background: rgba(30, 215, 96, 0.05);
+    border-color: var(--primary);
+    transform: translateY(-10px);
+}
+
+.card-icon { font-size: 2rem; margin-bottom: 20px; }
+
+.video-glass {
+    width: 100%;
+    aspect-ratio: 16/9;
+    background: var(--glass);
+    border: 1px solid var(--glass-border);
+    border-radius: 40px;
+    margin: 60px 0;
+    overflow: hidden;
+    position: relative;
+}
+
+.video-placeholder {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: url('https://images.unsplash.com/photo-1614850523296-d8c1af93d400?auto=format&fit=crop&q=80&w=1200') center/cover;
+}
+
+.play-btn {
+    width: 80px; height: 80px;
+    background: var(--primary);
+    border-radius: 50%;
+    margin-bottom: 20px;
+    cursor: pointer;
+    box-shadow: 0 0 30px var(--primary);
+}
+
+.glass-footer {
+    text-align: center;
+    padding: 60px 20px;
+    opacity: 0.5;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+}
